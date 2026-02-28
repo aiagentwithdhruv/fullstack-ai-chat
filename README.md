@@ -18,8 +18,7 @@ Stream AI responses in real-time. Full conversation history. Deployed on AWS wit
 
 <br />
 
-<!-- Take a screenshot of the chat interface and save as assets/chat-interface.png -->
-![Conversa AI](assets/chat-interface.png)
+![Conversa AI](assets/chat-interface.jpeg)
 
 <br />
 
@@ -56,26 +55,17 @@ Stream AI responses in real-time. Full conversation history. Deployed on AWS wit
 
 ## Screenshots
 
-### Chat Interface — Streaming AI Responses
+### Chat Interface — Code Generation with Syntax Highlighting
 
-<!-- Take a screenshot showing a conversation with streaming response -->
-![Chat Interface](assets/chat-interface.png)
+![Chat Interface](assets/chat-interface.jpeg)
 
-> Real-time token streaming via Server-Sent Events. Markdown rendering with syntax-highlighted code blocks.
+> Real-time token streaming via Server-Sent Events. Markdown rendering with syntax-highlighted code blocks. Conversation history in sidebar.
 
-### File Upload — PDF Analysis
+### Image Analysis — GPT-4o Vision
 
-<!-- Take a screenshot showing file upload + AI analysis -->
-![File Upload](assets/file-upload.png)
+![Image Analysis](assets/file-upload.png)
 
-> Drag and drop any file — PDF, DOCX, XLSX, or image. AI reads the content and answers your questions.
-
-### Conversation Sidebar
-
-<!-- Take a screenshot showing sidebar with multiple conversations -->
-![Sidebar](assets/sidebar.png)
-
-> Auto-generated titles. Full history. Click to switch between conversations.
+> Upload any image — GPT-4o Vision analyzes it and extracts structured data. Full multi-modal support.
 
 ---
 
