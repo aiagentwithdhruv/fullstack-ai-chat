@@ -68,7 +68,7 @@ export default function Sidebar({
       {/* Footer */}
       <div className="p-3 border-t border-chat-border">
         <p className="text-[10px] text-gray-600 text-center">
-          Full-Stack AI Chat v1.0
+          Conversa AI v1.0 | by AiwithDhruv
         </p>
       </div>
     </aside>

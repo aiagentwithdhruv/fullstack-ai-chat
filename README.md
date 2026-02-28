@@ -1,6 +1,6 @@
-# Full-Stack AI Chat
+# Conversa AI | by AiwithDhruv
 
-> ChatGPT-like application with multi-modal file support.
+> Intelligent conversational AI with multi-modal file support.
 > Built with Next.js + FastAPI + MongoDB + AWS.
 
 ---
@@ -261,7 +261,7 @@ npm run dev
 ## Project Structure
 
 ```
-Full-Stack-AI-Chat/
+Conversa-AI/
 │
 ├── backend/                      # Python FastAPI
 │   ├── app/
@@ -442,5 +442,5 @@ Phase 5 (Week 11-12)  →  Docker, Deployment, Monitoring
 Phase 7 (Week 15-17)  →  Full-Stack AI App Capstone
 ```
 
-This project is a complete reference implementation for the
-**Future-Proof AI Automation Bootcamp** at Euron.
+Conversa AI is a complete reference implementation for the
+**Future-Proof AI Automation Bootcamp** at Euron — by AiwithDhruv.

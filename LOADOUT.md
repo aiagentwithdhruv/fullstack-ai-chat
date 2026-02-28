@@ -1,6 +1,6 @@
-# Full-Stack AI Chat — Production Deployment Project
+# Conversa AI | by AiwithDhruv — Production Deployment Project
 
-> ChatGPT-like application with full AWS production infrastructure.
+> Intelligent conversational AI with full AWS production infrastructure.
 > Live class project for Euron's Future-Proof AI Automation Bootcamp.
 
 ---
@@ -11,7 +11,7 @@
 ┌────────────────────┬──────────────────────────────────────────────┐
 │ Field              │ Value                                        │
 ├────────────────────┼──────────────────────────────────────────────┤
-│ What               │ ChatGPT clone — multi-modal chat + files     │
+│ What               │ Conversa AI — multi-modal chat + files        │
 │ Frontend           │ Next.js 14 + TypeScript + Tailwind CSS       │
 │ Backend            │ Python 3.11 + FastAPI                        │
 │ AI                 │ OpenAI GPT-4o (text + vision + streaming)    │
@@ -255,7 +255,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  DATABASE: fullstack_ai_chat                             │
+│  DATABASE: conversa_ai                                    │
 │                                                          │
 │  ┌─ conversations ────────────────────────────────────┐ │
 │  │  _id            ObjectId                            │ │
@@ -435,4 +435,4 @@ Docker → ECR → ECS Fargate → ALB → CloudWatch → Grafana
 
 ---
 
-*Last updated: 2026-02-28 | Version: 2.0 — Code built, ready to deploy*
+*Last updated: 2026-02-28 | Version: 2.0 — Conversa AI by AiwithDhruv — LIVE on AWS*

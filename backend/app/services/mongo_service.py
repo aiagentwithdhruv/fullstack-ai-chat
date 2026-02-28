@@ -1,3 +1,4 @@
+import certifi
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 from datetime import datetime, timezone
 from bson import ObjectId
@@ -12,7 +13,7 @@ _db: AsyncIOMotorDatabase | None = None
 
 async def connect_db():
     global _client, _db
-    _client = AsyncIOMotorClient(settings.mongodb_uri)
+    _client = AsyncIOMotorClient(settings.mongodb_uri, tlsCAFile=certifi.where())
     _db = _client[settings.mongodb_db_name]
     # Create indexes
     await _db.conversations.create_index("created_at")

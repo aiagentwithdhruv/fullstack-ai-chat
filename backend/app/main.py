@@ -56,4 +56,4 @@ async def health():
 
 @app.get("/")
 async def root():
-    return {"message": "Full-Stack AI Chat API", "docs": "/docs"}
+    return {"message": "Conversa AI API | by AiwithDhruv", "docs": "/docs"}

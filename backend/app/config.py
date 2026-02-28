@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379"
 
     # App
-    app_name: str = "Full-Stack AI Chat"
+    app_name: str = "Conversa AI"
     debug: bool = False
     cors_origins: list[str] = ["http://localhost:3000"]
 

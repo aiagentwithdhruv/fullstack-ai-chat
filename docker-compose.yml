@@ -11,7 +11,7 @@ services:
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - MONGODB_URI=mongodb://mongo:27017
-      - MONGODB_DB_NAME=fullstack_ai_chat
+      - MONGODB_DB_NAME=conversa_ai
       - REDIS_URL=redis://redis:6379
       - CORS_ORIGINS=["http://localhost:3000"]
     depends_on:

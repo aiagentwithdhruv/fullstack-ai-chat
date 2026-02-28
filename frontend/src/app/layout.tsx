@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Full-Stack AI Chat",
-  description: "ChatGPT-like application with multi-modal file support",
+  title: "Conversa AI | by AiwithDhruv",
+  description: "Intelligent conversational AI with multi-modal file support — powered by AiwithDhruv",
 };
 
 export default function RootLayout({

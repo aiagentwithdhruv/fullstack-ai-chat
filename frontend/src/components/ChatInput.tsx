@@ -50,7 +50,7 @@ export default function ChatInput({ onSend, disabled = false }: ChatInputProps) 
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Message AI Chat..."
+            placeholder="Message Conversa AI..."
             disabled={disabled}
             rows={1}
             className="flex-1 bg-transparent text-gray-100 placeholder-gray-500 resize-none outline-none text-sm py-1.5 max-h-[200px]"
