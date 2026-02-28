@@ -1,0 +1,119 @@
+{
+  "dashboard": {
+    "title": "Full-Stack AI Chat — Production Dashboard",
+    "uid": "fullstack-ai-chat",
+    "timezone": "browser",
+    "panels": [
+      {
+        "title": "API Response Time (p50, p95, p99)",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+        "targets": [
+          {
+            "refId": "A",
+            "namespace": "AWS/ApplicationELB",
+            "metricName": "TargetResponseTime",
+            "statistics": ["p50"],
+            "period": 60
+          },
+          {
+            "refId": "B",
+            "namespace": "AWS/ApplicationELB",
+            "metricName": "TargetResponseTime",
+            "statistics": ["p95"],
+            "period": 60
+          },
+          {
+            "refId": "C",
+            "namespace": "AWS/ApplicationELB",
+            "metricName": "TargetResponseTime",
+            "statistics": ["p99"],
+            "period": 60
+          }
+        ]
+      },
+      {
+        "title": "Request Count",
+        "type": "stat",
+        "gridPos": { "h": 8, "w": 6, "x": 12, "y": 0 },
+        "targets": [
+          {
+            "refId": "A",
+            "namespace": "AWS/ApplicationELB",
+            "metricName": "RequestCount",
+            "statistics": ["Sum"],
+            "period": 300
+          }
+        ]
+      },
+      {
+        "title": "Error Rate (5xx)",
+        "type": "stat",
+        "gridPos": { "h": 8, "w": 6, "x": 18, "y": 0 },
+        "targets": [
+          {
+            "refId": "A",
+            "namespace": "AWS/ApplicationELB",
+            "metricName": "HTTPCode_Target_5XX_Count",
+            "statistics": ["Sum"],
+            "period": 300
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": 0 },
+                { "color": "yellow", "value": 5 },
+                { "color": "red", "value": 20 }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "title": "ECS CPU Utilization",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+        "targets": [
+          {
+            "refId": "A",
+            "namespace": "AWS/ECS",
+            "metricName": "CPUUtilization",
+            "dimensions": { "ClusterName": "fullstack-ai-chat" },
+            "statistics": ["Average"],
+            "period": 60
+          }
+        ]
+      },
+      {
+        "title": "ECS Memory Utilization",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+        "targets": [
+          {
+            "refId": "A",
+            "namespace": "AWS/ECS",
+            "metricName": "MemoryUtilization",
+            "dimensions": { "ClusterName": "fullstack-ai-chat" },
+            "statistics": ["Average"],
+            "period": 60
+          }
+        ]
+      },
+      {
+        "title": "Backend Logs (Live)",
+        "type": "logs",
+        "gridPos": { "h": 10, "w": 24, "x": 0, "y": 16 },
+        "targets": [
+          {
+            "refId": "A",
+            "logGroupName": "/ecs/fullstack-ai-chat-backend"
+          }
+        ]
+      }
+    ],
+    "time": { "from": "now-3h", "to": "now" },
+    "refresh": "30s"
+  }
+}
