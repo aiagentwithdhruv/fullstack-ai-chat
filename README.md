@@ -322,6 +322,54 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 ---
 
+## How This Was Built — The Raw AI Prompts
+
+This entire project — frontend, backend, infrastructure, CI/CD, monitoring — was built in **one session** using [Claude Code](https://claude.ai/code). No boilerplate generators. No tutorials. Just natural language prompts.
+
+Here are the exact prompts used:
+
+### Prompt 1: Build the App
+
+> *"I'm trying to build a particular product where it should behave like ChatGPT. We are going to configure a ChatGPT API key. If my user is going to ask any kind of question, just like ChatGPT, it should try to give an answer out of all the textual conversation, or maybe an image-based conversation, maybe a PDF file-based conversation, word-based conversation, Excel sheet conversation. It should be able to do all kinds of things. It should give me an option to attach a particular file, and then I can go and try to ask any kind of question. I can even download that particular file. My file must be visible inside a chat interface, like a word, PDF, or maybe an image if I'm going to pass, so it should be visible.*
+>
+> *Now you have to create this particular application by using: Next.js and TypeScript and Tailwind CSS for frontend. Python and FastAPI for backend.*
+>
+> *You have to store each and every user conversation and whatever file a user is going to upload inside a database, MongoDB. For MongoDB, I am going to use a MongoDB Atlas.*
+>
+> *I wanted to ship this application to a production environment, so there I wanted to automate each and everything. From a local system, my code should go to a GitHub repository; then GitHub Action is supposed to call AWS. Inside AWS, you have to configure ECR and ECS: ECR for a Docker registry, and then ECS for deployment. Around that you have to implement ElastiCache (Redis) and an Application Load Balancer. In ECR, you are supposed to use ECS Fargate so that I will be able to host my entire backend on serverless.*
+>
+> *With the help of AWS CLI from my local system, I would like to configure each and everything in a step-by-step manner. Just try to do this configuration for me so that I will be able to build the project, do CI/CD, and eventually by the time I push my codebase, it should build and my feature should be live inside a production environment.*
+>
+> *I also wanted to implement logging and monitoring. Log each and everything inside CloudWatch. On top of that, I want a Grafana dashboard where I will be able to see all the metrics with respect to application and server."*
+
+**Result:** Claude Code generated the entire codebase — 30+ files, frontend + backend + Docker + CI/CD + Grafana.
+
+### Prompt 2: Set Up AWS & Deploy
+
+> *"Now configure AWS. Create ECR repositories, VPC, subnets, security groups, ECS cluster, ElastiCache. Give me the step-by-step AWS CLI commands."*
+
+**Result:** Generated `infrastructure/setup-aws.sh` — complete AWS setup script (190 lines). Then:
+
+> *"Now push to GitHub and set up the CI/CD."*
+
+**Result:** Created `.github/workflows/deploy.yml`, pushed to GitHub, configured secrets, triggered first deploy. App was live on AWS within minutes.
+
+### Prompt 3: README & Documentation
+
+> *"Create a proper README with Mermaid diagrams, Excalidraw architecture file, and push to GitHub."*
+
+**Result:** This README, 3 Mermaid diagrams, architecture Excalidraw file — all generated and pushed.
+
+### What You Can Learn From This
+
+1. **Describe WHAT you want, not HOW to build it** — Let AI figure out the architecture
+2. **Include deployment in the initial prompt** — Don't treat it as an afterthought
+3. **Be specific about tech stack** — AI makes better decisions with constraints
+4. **Ask for infrastructure as code** — Scripts > clicking through AWS console
+5. **One session, full production** — With the right prompt, AI ships complete systems
+
+---
+
 ## Euron Bootcamp
 
 This project is a reference implementation for the **Future-Proof AI Automation Bootcamp** at [Euron](https://euron.one).
